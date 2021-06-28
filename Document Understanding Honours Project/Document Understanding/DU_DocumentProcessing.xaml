@@ -1,0 +1,540 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:al="clr-namespace:Alphabet.Logging;assembly=GetXamlFileNameActivity" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/intelligentocr" xmlns:p1="http://schemas.uipath.com/workflow/activities/intelligentocr/classification" xmlns:p2="http://schemas.uipath.com/workflow/activities/document-processing-contracts/classification" xmlns:p3="http://schemas.uipath.com/workflow/activities/document-processing-contracts/dom" xmlns:p4="http://schemas.uipath.com/workflow/activities/intelligentocr/extraction" xmlns:p5="http://schemas.uipath.com/workflow/activities/document-processing-contracts/results" xmlns:p6="http://schemas.uipath.com/workflow/activities/document-processing-contracts/extraction" xmlns:p7="http://schemas.uipath.com/workflow/activities/document-processing-contracts/taxonomy" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:sd1="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uoa="clr-namespace:UiPath.OmniPage.Activities;assembly=UiPath.OmniPage.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Mode" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1516,6021.6</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="49">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Taxonomy</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Dom</x:String>
+      <x:String>UiPath.Vision.OCR</x:String>
+      <x:String>UiPath.OCR.Contracts</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Results</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Classification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.DataExtraction</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>Alphabet.Logging</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts</x:String>
+      <x:String>UiPath.DocumentUnderstanding.ML.Activities.Editors</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Digitization</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.OmniPage.Activities</x:String>
+      <x:String>UiPath.OCR.Contracts.Activities</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DocumentClassification</x:String>
+      <x:String>UiPath.DocumentProcessing.Contracts.Training</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.Training</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.DataExtraction</x:String>
+      <x:String>UiPath.IntelligentOCR.Activities.ValidationStation</x:String>
+      <x:String>System.ComponentModel</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentProcessing.Contracts</AssemblyReference>
+      <AssemblyReference>UiPath.Vision.Core</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Contracts</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.CV</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.DocumentUnderstanding.ML.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>GetXamlFileNameActivity</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.IntelligentOCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OmniPage.Activities</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="DU Workflow" sap:VirtualizedContainerService.HintSize="1526.4,5956.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="p7:DocumentTaxonomy" Name="taxonomy" />
+      <Variable x:TypeArguments="s:String[]" Name="paths" />
+      <Variable x:TypeArguments="x:String" Name="apiKey" />
+      <Variable x:TypeArguments="x:String" Name="fullPath" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <al:LogStartOfWorkflow Prefix="{x:Null}" DisplayName="Log start of workflow" sap:VirtualizedContainerService.HintSize="1484.8,22.4" sap2010:WorkflowViewState.IdRef="LogStartOfWorkflow_1" Suffix="[&quot;[&quot; + DateTime.Now.ToString(&quot;dd/MM/yyyy HH:mm:ss&quot;) + &quot;] [STARTED] &quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </al:LogStartOfWorkflow>
+    <ui:MultipleAssign sap2010:Annotation.AnnotationText="Assign Filepath to obtain Input Files&#xD;&#xA;Normally would use GetAsset from Orchestrator to obtain the API Key - but for this project will remain a hard coded value." DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1484.8,206.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+      <ui:MultipleAssign.AssignOperations>
+        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="s:String[]">[paths]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(in_Config("InputFilePath").ToString)]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+            <ui:AssignOperation.To>
+              <OutArgument x:TypeArguments="x:String">[apiKey]</OutArgument>
+            </ui:AssignOperation.To>
+            <ui:AssignOperation.Value>
+              <InArgument x:TypeArguments="x:String">[in_Config("DUApiKey").ToString]</InArgument>
+            </ui:AssignOperation.Value>
+          </ui:AssignOperation>
+        </scg:List>
+      </ui:MultipleAssign.AssignOperations>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:MultipleAssign>
+    <p:LoadTaxonomy DisplayName="Load Taxonomy" sap:VirtualizedContainerService.HintSize="1484.8,105.6" sap2010:WorkflowViewState.IdRef="LoadTaxonomy_1" Taxonomy="[taxonomy]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </p:LoadTaxonomy>
+    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1484.8,5347.2" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[paths]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:String">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:String" Name="path" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1449.6,5212.8" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="docName" />
+              <Variable x:TypeArguments="p3:Document" Name="dom" />
+              <Variable x:TypeArguments="x:String" Name="text" />
+              <Variable x:TypeArguments="p5:ClassificationResult[]" Name="classificationResults" />
+              <Variable x:TypeArguments="p5:ExtractionResult" Name="extractionResults" />
+              <Variable x:TypeArguments="p5:ExtractionResult" Name="validatedResults" />
+              <Variable x:TypeArguments="x:Boolean" Name="validationStationError" />
+              <Variable x:TypeArguments="x:String" Name="validationStationExceptionInfo" />
+              <Variable x:TypeArguments="x:String" Name="TaxonomyId" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="1408,130.4" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+              <ui:MultipleAssign.AssignOperations>
+                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[docName]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[System.IO.Path.GetFileNameWithoutExtension(path)]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                    <ui:AssignOperation.To>
+                      <OutArgument x:TypeArguments="x:String">[fullPath]</OutArgument>
+                    </ui:AssignOperation.To>
+                    <ui:AssignOperation.Value>
+                      <InArgument x:TypeArguments="x:String">[System.IO.Path.GetFileName(path)]</InArgument>
+                    </ui:AssignOperation.Value>
+                  </ui:AssignOperation>
+                </scg:List>
+              </ui:MultipleAssign.AssignOperations>
+            </ui:MultipleAssign>
+            <If Condition="[fullPath.Contains(&quot;.pdf&quot;)]" DisplayName="If - PDF Documents" sap:VirtualizedContainerService.HintSize="1408,4949.6" sap2010:WorkflowViewState.IdRef="If_3">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="938.4,4790.4" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="896.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Processing document: &quot; + fullPath]" />
+                  <Sequence DisplayName="Digitization" sap:VirtualizedContainerService.HintSize="896.8,523.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Digitizing the document: &quot; + docName]" />
+                    <p:DigitizeDocument DegreeOfParallelism="-1" DisplayName="Digitize Document" DocumentObjectModel="[dom]" DocumentPath="[path]" DocumentText="[text]" ForceApplyOCR="True" sap:VirtualizedContainerService.HintSize="333.6,297.6" sap2010:WorkflowViewState.IdRef="DigitizeDocument_1">
+                      <p:DigitizeDocument.OCREngine>
+                        <ActivityFunc x:TypeArguments="sd:Image, scg:IEnumerable(scg:KeyValuePair(sd:Rectangle, x:String))">
+                          <ActivityFunc.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:Image" Name="Image" />
+                          </ActivityFunc.Argument>
+                          <uoa:OmniPageOCR Language="{x:Null}" Output="{x:Null}" Profile="{x:Null}" Scale="{x:Null}" Text="{x:Null}" BundleType="Basic" ComputeSkewAngle="False" DisplayName="OmniPage OCR" ExtractWords="True" sap:VirtualizedContainerService.HintSize="312,22.4" sap2010:WorkflowViewState.IdRef="OmniPageOCR_1" Image="[Image]" />
+                        </ActivityFunc>
+                      </p:DigitizeDocument.OCREngine>
+                    </p:DigitizeDocument>
+                  </Sequence>
+                  <Sequence DisplayName="Document Classification" sap:VirtualizedContainerService.HintSize="896.8,667.2" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="477.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Classifying the document: &quot; + docName]" />
+                    <p1:ClassifyDocumentScope ClassificationResults="[classificationResults]" DisplayName="Classify Document Scope" DocumentObjectModel="[dom]" DocumentPath="[path]" DocumentText="[text]" sap:VirtualizedContainerService.HintSize="477.6,441.6" sap2010:WorkflowViewState.IdRef="ClassifyDocumentScope_1" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI3ff103555be64de8900f111fc57f5449&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;SafehouseDocuments.MedicalForms.CIOMSForm&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm&quot;,&quot;ClassifierDocumentTypeId&quot;:&quot;&quot;,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;XeretecDocuments.ServiceNow.FieldServiceReport&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true},&quot;SafehouseDocuments.Invoices.CMAInvoice&quot;:{&quot;OriginalDocumentTypeId&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice&quot;,&quot;ClassifierDocumentTypeId&quot;:null,&quot;IsDocumentTypeIdMapped&quot;:true}}}},&quot;ClassifierMinimumConfidence&quot;:{&quot;UI3ff103555be64de8900f111fc57f5449&quot;:&quot;0&quot;},&quot;DocumentTypesByPersistenceId&quot;:{}}">
+                      <p1:ClassifyDocumentScope.Classifiers>
+                        <p1:KeywordBasedClassifier HumanValidatedData="{x:Null}" LearningData="{x:Null}" DisplayName="Keyword Based Classifier" sap:VirtualizedContainerService.HintSize="233.6,115.2" sap2010:WorkflowViewState.IdRef="KeywordBasedClassifier_1" LearningFilePath="DocumentProcessing\keywords.json" PersistenceId="UI3ff103555be64de8900f111fc57f5449">
+                          <p1:KeywordBasedClassifier.ClassifierResult>
+                            <OutArgument x:TypeArguments="p2:ClassifierResult">
+                              <DelegateArgumentReference x:TypeArguments="p2:ClassifierResult">
+                                <DelegateOutArgument x:TypeArguments="p2:ClassifierResult" Name="ClassificationResult" />
+                              </DelegateArgumentReference>
+                            </OutArgument>
+                          </p1:KeywordBasedClassifier.ClassifierResult>
+                          <p1:KeywordBasedClassifier.DocumentObjectModel>
+                            <InArgument x:TypeArguments="p3:Document">
+                              <DelegateArgumentValue x:TypeArguments="p3:Document">
+                                <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentObjectModel>
+                          <p1:KeywordBasedClassifier.DocumentPath>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentPath>
+                          <p1:KeywordBasedClassifier.DocumentText>
+                            <InArgument x:TypeArguments="x:String">
+                              <DelegateArgumentValue x:TypeArguments="x:String">
+                                <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentText>
+                          <p1:KeywordBasedClassifier.DocumentTypes>
+                            <InArgument x:TypeArguments="p2:ClassifierDocumentType[]">
+                              <DelegateArgumentValue x:TypeArguments="p2:ClassifierDocumentType[]">
+                                <DelegateInArgument x:TypeArguments="p2:ClassifierDocumentType[]" Name="DocumentTypes" />
+                              </DelegateArgumentValue>
+                            </InArgument>
+                          </p1:KeywordBasedClassifier.DocumentTypes>
+                        </p1:KeywordBasedClassifier>
+                      </p1:ClassifyDocumentScope.Classifiers>
+                    </p1:ClassifyDocumentScope>
+                  </Sequence>
+                  <If Condition="[classificationResults.Any]" DisplayName="Data Extraction" sap:VirtualizedContainerService.HintSize="896.8,875.2" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="519.2,716" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="477.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Extracting data from: &quot; + docName]" />
+                        <p4:DataExtractionScope DocumentTypeId="{x:Null}" ClassificationResult="[classificationResults(0)]" DisplayName="Data Extraction Scope" DocumentObjectModel="[dom]" DocumentPath="[path]" DocumentText="[text]" ExtractionResult="[extractionResults]" FormatValuesIfPossible="True" sap:VirtualizedContainerService.HintSize="477.6,490.4" sap2010:WorkflowViewState.IdRef="DataExtractionScope_1" Taxonomy="[taxonomy]" TaxonomyConfiguration="{}{&quot;TaxonomyMappings&quot;:{&quot;UI59efa477a8464747a5883e93ffac2d80&quot;:{&quot;DocumentTypeMappings&quot;:{&quot;SafehouseDocuments.MedicalForms.CIOMSForm&quot;:{&quot;FieldMappings&quot;:{&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientInitials&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientInitials&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientCountry&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientCountry&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Day&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Day&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Month&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Month&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Year&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Year&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientGender&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientGender&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Day&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Day&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Month&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Month&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Year&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Year&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionLongDescription&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionLongDescription&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_PatientDied&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_PatientDied&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Hospitalisation&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Hospitalisation&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Disability&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Disability&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_LifeThreatening&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_LifeThreatening&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Anomaly&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Anomaly&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Other&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Other&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.SuspectedDrugs&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.SuspectedDrugs&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ManufacturerNameAndAddress&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ManufacturerNameAndAddress&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ControlNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ControlNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReportDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReportDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:&quot;&quot;},&quot;XeretecDocuments.DevOps.RPAChangeRequest&quot;:{&quot;FieldMappings&quot;:{&quot;XeretecDocuments.DevOps.RPAChangeRequest.ProjectName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ProjectName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.ProjectNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ProjectNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeRequestNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeRequestNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.Requestor&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.Requestor&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.RequestTitle&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.RequestTitle&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeDescription&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeDescription&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeReason&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeReason&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Type&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Type&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.DevOpsID&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.DevOpsID&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Title&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Title&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.EstimatedHours&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.EstimatedHours&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.DevOps.RPAChangeRequest.Status&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.Status&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:&quot;&quot;},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice&quot;:{&quot;FieldMappings&quot;:{&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAddress&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAddress&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAccountNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAccountNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.SerialNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.SerialNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.VATTotal&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.VATTotal&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceTotal&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceTotal&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:&quot;&quot;},&quot;XeretecDocuments.ServiceNow.FieldServiceReport&quot;:{&quot;FieldMappings&quot;:{&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CompanyName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CompanyName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.ServiceNow.FieldServiceReport.SerialNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.SerialNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CaseID&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CaseID&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.ServiceNow.FieldServiceReport.ReasonForVisit&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.ReasonForVisit&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CustomerName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CustomerName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;XeretecDocuments.ServiceNow.FieldServiceReport.EngineerName&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.EngineerName&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null},&quot;SafehouseDocuments.Invoices.CMAInvoice&quot;:{&quot;FieldMappings&quot;:{&quot;SafehouseDocuments.Invoices.CMAInvoice.InvoiceNumber&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.InvoiceNumber&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.Invoices.CMAInvoice.Currency&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.Currency&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.Invoices.CMAInvoice.TotalAmount&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.TotalAmount&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true},&quot;SafehouseDocuments.Invoices.CMAInvoice.InvoiceDate&quot;:{&quot;OriginalTaxonomyFieldId&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.InvoiceDate&quot;,&quot;ExtractorTaxonomyFieldId&quot;:null,&quot;ShouldExtract&quot;:true}},&quot;ExtractorDocumentTypeId&quot;:null}}}},&quot;ExtractorMinimumConfidence&quot;:{&quot;UI59efa477a8464747a5883e93ffac2d80&quot;:&quot;80&quot;},&quot;ExtractorsAliases&quot;:{},&quot;DocumentTypeOptionsByExtractor&quot;:{&quot;UI59efa477a8464747a5883e93ffac2d80&quot;:[]}}">
+                          <p4:DataExtractionScope.Extractors>
+                            <p4:IntelligentFormExtractor SerializedSignatureFields="{x:Null}" ApiKey="[apiKey]" DisplayName="Intelligent Form Extractor" Endpoint="https://intelligentforms.uipath.com/" sap:VirtualizedContainerService.HintSize="233.6,164" sap2010:WorkflowViewState.IdRef="IntelligentFormExtractor_2" MinOverlapPercentage="65" PersistenceId="UI59efa477a8464747a5883e93ffac2d80" SerializedSettings="{}{&quot;DocTypeSettings&quot;:[{&quot;DocumentTypeId&quot;:&quot;IRS.Forms.Form4506T&quot;,&quot;SignatureFields&quot;:[{&quot;FieldId&quot;:&quot;IRS.Forms.Form4506T.signature&quot;}],&quot;HandwritingFields&quot;:[{&quot;FieldId&quot;:&quot;IRS.Forms.Form4506T.date&quot;}],&quot;BooleanSynonymsForYes&quot;:[],&quot;BooleanSynonymsForNo&quot;:[]},{&quot;DocumentTypeId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]},{&quot;DocumentTypeId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]},{&quot;DocumentTypeId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]},{&quot;DocumentTypeId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]},{&quot;DocumentTypeId&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice&quot;,&quot;SignatureFields&quot;:[],&quot;HandwritingFields&quot;:[],&quot;BooleanSynonymsForYes&quot;:[&quot;Yes&quot;,&quot;X&quot;,&quot;V&quot;,&quot;✓&quot;,&quot;✔&quot;],&quot;BooleanSynonymsForNo&quot;:[&quot;No&quot;]}]}" SerializedTemplates="[{&quot;DocumentTypeId&quot;:&quot;IRS.Forms.Form4506T&quot;,&quot;FormId&quot;:&quot;cfb2edac&quot;,&quot;FormName&quot;:&quot;4506-template&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,611.0,791.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;4506-T&quot;,&quot;Box&quot;:[35.9654,56.5696,63.2813,17.5032]},{&quot;Text&quot;:&quot;Request&quot;,&quot;Box&quot;:[36.9245,208.5406,43.386,10.5499]},{&quot;Text&quot;:&quot;Tax&quot;,&quot;Box&quot;:[36.9245,344.931,19.1761,8.6317]},{&quot;Text&quot;:&quot;social&quot;,&quot;Box&quot;:[123.0018,339.1781,18.9364,5.7545]},{&quot;Text&quot;:&quot;security&quot;,&quot;Box&quot;:[123.0018,360.5116,26.3672,7.1931]},{&quot;Text&quot;:&quot;number&quot;,&quot;Box&quot;:[123.0018,389.0361,25.4083,5.7545]},{&quot;Text&quot;:&quot;Transcript&quot;,&quot;Box&quot;:[301.3904,64.9592,38.8318,7.1931]},{&quot;Text&quot;:&quot;requested.&quot;,&quot;Box&quot;:[301.3904,106.6673,40.0302,7.1931]},{&quot;Text&quot;:&quot;Verification&quot;,&quot;Box&quot;:[422.7139,64.7195,43.1463,5.9942]},{&quot;Text&quot;:&quot;Year&quot;,&quot;Box&quot;:[515.7444,64.7195,17.738,5.7545]},{&quot;Text&quot;:&quot;Signature&quot;,&quot;Box&quot;:[563.4586,36.195,36.4347,7.6726]},{&quot;Text&quot;:&quot;Sign&quot;,&quot;Box&quot;:[657.6881,36.195,20.6144,9.351]},{&quot;Text&quot;:&quot;Form&quot;,&quot;Box&quot;:[759.5902,481.561,15.5807,5.0352]},{&quot;Text&quot;:&quot;4506-T&quot;,&quot;Box&quot;:[757.4323,499.5387,32.1199,7.1931]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.name&quot;,&quot;Box&quot;:[136.791,35.8262,263.8113,16.936]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.first-social-security-number&quot;,&quot;Box&quot;:[136.1397,301.5917,274.8849,18.8902]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.spouse-name&quot;,&quot;Box&quot;:[164.8006,36.4776,265.1141,26.0554]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.second-social-security-number&quot;,&quot;Box&quot;:[172.6173,302.8945,274.2335,17.5874]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.current-address&quot;,&quot;Box&quot;:[199.9755,36.4776,538.6962,15.6333]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.previous-address&quot;,&quot;Box&quot;:[223.4254,35.1748,539.9989,16.2846]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.customer-file-number&quot;,&quot;Box&quot;:[247.1358,35.8262,541.3017,16.2846]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.tax-form-number&quot;,&quot;Box&quot;:[307.4542,147.2132,121.1578,14.9819]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.return-transcript&quot;,&quot;Box&quot;:[346.7979,562.1461,12.3763,14.3305]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.account-transcript&quot;,&quot;Box&quot;:[380.0186,560.1919,13.6791,13.0277]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.record-of-account&quot;,&quot;Box&quot;:[404.3804,560.8433,14.9819,12.3763]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.verification-of-nonfiling&quot;,&quot;Box&quot;:[427.7,561.4947,13.0277,14.3305]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.form-xx-transcript&quot;,&quot;Box&quot;:[475.7723,560.8433,13.6791,14.3305]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.year-period-requested&quot;,&quot;Box&quot;:[530.0979,208.4435,92.4968,17.5874]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.signatory-attests&quot;,&quot;Box&quot;:[609.8275,33.8721,13.6791,10.4222]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.signature&quot;,&quot;Box&quot;:[626.1122,84.6802,260.5544,17.5874]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.date&quot;,&quot;Box&quot;:[616.6019,345.2345,91.8454,26.7068]},{&quot;Field&quot;:&quot;IRS.Forms.Form4506T.phone-number&quot;,&quot;Box&quot;:[626.2424,439.0341,138.0938,18.2388]}],&quot;Tables&quot;:[]},{&quot;Page&quot;:1,&quot;Size&quot;:[0.0,0.0,611.0,791.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice&quot;,&quot;FormId&quot;:&quot;b92561c1&quot;,&quot;FormName&quot;:&quot;Fuzhou Bangjie Invoice Template&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;TO&quot;,&quot;Box&quot;:[10.036,29.6727,25.002,23.958]},{&quot;Text&quot;:&quot;POLAND&quot;,&quot;Box&quot;:[10.036,59.6787,74.016,23.958]},{&quot;Text&quot;:&quot;FUZHOU&quot;,&quot;Box&quot;:[32.2087,141.12,32.2791,10.56]},{&quot;Text&quot;:&quot;BANGJIE&quot;,&quot;Box&quot;:[32.2087,178.923,37.6795,10.56]},{&quot;Text&quot;:&quot;ENVIRONMENTAL&quot;,&quot;Box&quot;:[32.2087,222.1265,70.082,10.56]},{&quot;Text&quot;:&quot;PROTECTION&quot;,&quot;Box&quot;:[32.2087,297.7325,53.8808,10.56]},{&quot;Text&quot;:&quot;TECHNOLOGY&quot;,&quot;Box&quot;:[32.2087,357.1372,53.8808,10.56]},{&quot;Text&quot;:&quot;INVOICE&quot;,&quot;Box&quot;:[80.7683,274.56,46.2895,14.615]},{&quot;Text&quot;:&quot;1/9&quot;,&quot;Box&quot;:[814.3317,288.24,17.9965,12.0]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice.invoiceNumber&quot;,&quot;Box&quot;:[97.2265,484.8099,60.8493,12.5667]},{&quot;Field&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice.invoiceDate&quot;,&quot;Box&quot;:[122.3599,467.3488,48.2826,15.2123]}],&quot;Tables&quot;:[]},{&quot;Page&quot;:1,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;FUZHOU&quot;,&quot;Box&quot;:[32.2087,141.12,32.2791,10.56]},{&quot;Text&quot;:&quot;BANGJIE&quot;,&quot;Box&quot;:[32.2087,178.923,37.6795,10.56]},{&quot;Text&quot;:&quot;ENVIRONMENTAL&quot;,&quot;Box&quot;:[32.2087,222.1265,70.082,10.56]},{&quot;Text&quot;:&quot;INVOICE&quot;,&quot;Box&quot;:[80.7683,274.56,46.2895,14.615]},{&quot;Text&quot;:&quot;2/9&quot;,&quot;Box&quot;:[814.3317,288.24,17.9965,12.0]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:2,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;FUZHOU&quot;,&quot;Box&quot;:[32.2087,141.12,32.2791,10.56]},{&quot;Text&quot;:&quot;BANGJIE&quot;,&quot;Box&quot;:[32.2087,178.923,37.6795,10.56]},{&quot;Text&quot;:&quot;ENVIRONMENTAL&quot;,&quot;Box&quot;:[32.2087,222.1265,70.082,10.56]},{&quot;Text&quot;:&quot;PROTECTION&quot;,&quot;Box&quot;:[32.2087,297.7325,53.8808,10.56]},{&quot;Text&quot;:&quot;INVOICE&quot;,&quot;Box&quot;:[80.7683,274.56,46.2895,14.615]},{&quot;Text&quot;:&quot;INVOICE&quot;,&quot;Box&quot;:[98.1597,431.16,37.0082,12.123]},{&quot;Text&quot;:&quot;3/9&quot;,&quot;Box&quot;:[814.3317,288.24,17.9965,12.0]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice.accountNumber&quot;,&quot;Box&quot;:[353.8021,68.1247,44.3141,10.5825]},{&quot;Field&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice.swiftCode&quot;,&quot;Box&quot;:[364.6491,72.7546,64.1563,14.5509]},{&quot;Field&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice.companyName&quot;,&quot;Box&quot;:[311.869,74.7388,476.873,11.9053]},{&quot;Field&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice.bankName&quot;,&quot;Box&quot;:[324.7003,55.558,517.2187,12.5667]},{&quot;Field&quot;:&quot;Portwest.Invoices.FuzhouBangjieInvoice.bankAddress&quot;,&quot;Box&quot;:[338.0607,65.8759,515.8959,15.8737]}],&quot;Tables&quot;:[]},{&quot;Page&quot;:3,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:4,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:5,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:6,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:7,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:8,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:9,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:10,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:11,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]},{&quot;Page&quot;:12,&quot;Size&quot;:[0.0,0.0,3508.0,2480.0],&quot;SkewAngle&quot;:-0.3,&quot;Evidence&quot;:[],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm&quot;,&quot;FormId&quot;:&quot;80862e29&quot;,&quot;FormName&quot;:&quot;CIOMS Form - Suspect Adverse Reaction Report&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,612.0,792.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;SUSPECT&quot;,&quot;Box&quot;:[46.9,82.105,47.23,13.86]},{&quot;Text&quot;:&quot;ADVERSE&quot;,&quot;Box&quot;:[46.9,131.745,48.34,13.86]},{&quot;Text&quot;:&quot;REACTION&quot;,&quot;Box&quot;:[46.9,182.865,52.22,13.86]},{&quot;Text&quot;:&quot;REPORT&quot;,&quot;Box&quot;:[46.9,237.865,41.67,13.86]},{&quot;Text&quot;:&quot;REACTION&quot;,&quot;Box&quot;:[98.63,244.925,51.67,13.62]},{&quot;Text&quot;:&quot;INFORMATION&quot;,&quot;Box&quot;:[98.63,299.375,69.26,13.62]},{&quot;Text&quot;:&quot;CIOMS&quot;,&quot;Box&quot;:[5.9,490.0,32.78,13.86]},{&quot;Text&quot;:&quot;FORM&quot;,&quot;Box&quot;:[5.9,525.56,29.44,13.86]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientInitials&quot;,&quot;Box&quot;:[129.1583,65.3301,43.5534,13.5166]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientCountry&quot;,&quot;Box&quot;:[123.9018,118.6454,66.8319,18.773]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Day&quot;,&quot;Box&quot;:[129.9092,188.481,17.2712,14.2675]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Month&quot;,&quot;Box&quot;:[129.9092,209.5067,30.0368,13.5166]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Year&quot;,&quot;Box&quot;:[131.411,243.2982,21.7767,12.0147]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.PatientGender&quot;,&quot;Box&quot;:[123.9018,299.6172,28.535,21.0258]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Day&quot;,&quot;Box&quot;:[130.6601,368.7018,22.5276,13.5166]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Month&quot;,&quot;Box&quot;:[130.6601,394.2331,28.535,12.7656]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Year&quot;,&quot;Box&quot;:[129.9092,427.2736,21.7767,15.0184]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionLongDescription&quot;,&quot;Box&quot;:[165.2025,60.0736,385.973,89.3595]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_PatientDied&quot;,&quot;Box&quot;:[140.4221,458.8123,6.0074,8.2601]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Hospitalisation&quot;,&quot;Box&quot;:[162.9497,458.0613,6.7583,6.7583]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Disability&quot;,&quot;Box&quot;:[181.7227,458.8123,6.0074,6.7583]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_LifeThreatening&quot;,&quot;Box&quot;:[212.5104,458.8123,6.0074,6.7583]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Anomaly&quot;,&quot;Box&quot;:[232.0344,457.3104,7.5092,7.5092]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Other&quot;,&quot;Box&quot;:[249.3055,458.8123,9.011,10.5129]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.SuspectedDrugs&quot;,&quot;Box&quot;:[297.3644,57.8209,389.7276,10.5129]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ManufacturerNameAndAddress&quot;,&quot;Box&quot;:[603.7399,56.319,249.3055,52.5644]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ControlNumber&quot;,&quot;Box&quot;:[669.0699,151.6859,152.4368,17.2712]},{&quot;Field&quot;:&quot;SafehouseDocuments.MedicalForms.CIOMSForm.ReportDate&quot;,&quot;Box&quot;:[735.1509,56.319,87.8577,12.0147]}],&quot;Tables&quot;:[]},{&quot;Page&quot;:1,&quot;Size&quot;:[0.0,0.0,612.0,792.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Page&quot;,&quot;Box&quot;:[5.63,55.0,23.35,13.62]},{&quot;Text&quot;:&quot;2&quot;,&quot;Box&quot;:[5.63,81.13,5.56,13.62]},{&quot;Text&quot;:&quot;Mfr.&quot;,&quot;Box&quot;:[21.63,376.6,16.67,13.62]},{&quot;Text&quot;:&quot;Control&quot;,&quot;Box&quot;:[21.63,396.05,32.23,13.62]},{&quot;Text&quot;:&quot;Number:&quot;,&quot;Box&quot;:[21.63,431.06,38.34,13.62]},{&quot;Text&quot;:&quot;ADDITIONAL&quot;,&quot;Box&quot;:[34.9,237.965,61.66,13.86]},{&quot;Text&quot;:&quot;INFORMATION&quot;,&quot;Box&quot;:[34.9,302.225,69.81,13.86]}],&quot;Fields&quot;:[],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest&quot;,&quot;FormId&quot;:&quot;102c1468&quot;,&quot;FormName&quot;:&quot;Xeretec RPA Change Request&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;xeretec&quot;,&quot;Box&quot;:[27.3301,423.9375,98.6068,20.8572]},{&quot;Text&quot;:&quot;Partner&quot;,&quot;Box&quot;:[47.2283,148.9899,66.9375,13.4253]},{&quot;Text&quot;:&quot;SILVER&quot;,&quot;Box&quot;:[65.6881,148.5101,26.631,5.9934]},{&quot;Text&quot;:&quot;Change&quot;,&quot;Box&quot;:[129.4584,72.6956,56.8608,15.1035]},{&quot;Text&quot;:&quot;Request&quot;,&quot;Box&quot;:[129.6981,135.3145,60.6997,14.624]},{&quot;Text&quot;:&quot;Form&quot;,&quot;Box&quot;:[129.6981,201.2923,37.4275,11.7471]},{&quot;Text&quot;:&quot;Project&quot;,&quot;Box&quot;:[149.1169,72.6956,32.869,9.11]},{&quot;Text&quot;:&quot;Name:&quot;,&quot;Box&quot;:[149.1169,108.9234,28.5504,7.1921]},{&quot;Text&quot;:&quot;Summary&quot;,&quot;Box&quot;:[210.4897,72.4556,54.9416,12.4664]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ProjectName&quot;,&quot;Box&quot;:[144.5667,140.4509,393.0568,16.4631]},{&quot;Field&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.Requestor&quot;,&quot;Box&quot;:[243.3454,143.5378,393.0568,16.4631]},{&quot;Field&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.RequestTitle&quot;,&quot;Box&quot;:[265.4677,138.393,394.6002,14.4052]},{&quot;Field&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeDescription&quot;,&quot;Box&quot;:[340.0661,188.8113,331.3201,65.338]},{&quot;Field&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.ChangeReason&quot;,&quot;Box&quot;:[419.2949,186.7534,335.9504,42.1867]}],&quot;Tables&quot;:[]},{&quot;Page&quot;:1,&quot;Size&quot;:[0.0,0.0,595.0,841.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Status&quot;,&quot;Box&quot;:[405.6951,72.024,36.1584,12.1565]},{&quot;Text&quot;:&quot;Approval&quot;,&quot;Box&quot;:[466.4351,72.024,51.4771,12.1565]},{&quot;Text&quot;:&quot;Rejection&quot;,&quot;Box&quot;:[466.4351,134.3875,53.4212,12.1565]},{&quot;Text&quot;:&quot;Approval&quot;,&quot;Box&quot;:[483.1391,77.664,43.1268,9.3425]},{&quot;Text&quot;:&quot;Rejection&quot;,&quot;Box&quot;:[483.1391,128.5895,44.4315,9.3425]},{&quot;Text&quot;:&quot;Date&quot;,&quot;Box&quot;:[483.1391,175.4812,21.8621,9.3425]},{&quot;Text&quot;:&quot;Approved&quot;,&quot;Box&quot;:[504.7391,77.664,46.6327,9.3425]},{&quot;Text&quot;:&quot;Rejected&quot;,&quot;Box&quot;:[504.7391,132.0854,41.7025,9.3425]},{&quot;Text&quot;:&quot;By&quot;,&quot;Box&quot;:[504.7391,176.3178,12.3903,9.3425]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.Status&quot;,&quot;Box&quot;:[419.2949,73.5695,450.1632,21.6078]}],&quot;Tables&quot;:[{&quot;FieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails&quot;,&quot;Headers&quot;:[{&quot;FieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Type&quot;,&quot;Box&quot;:[287.0755,73.0551,47.7717,0.7717]},{&quot;FieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.DevOpsID&quot;,&quot;Box&quot;:[287.0755,120.8268,64.0,0.7717]},{&quot;FieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Title&quot;,&quot;Box&quot;:[287.0755,184.8268,269.0,0.7717]},{&quot;FieldId&quot;:&quot;XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.EstimatedHours&quot;,&quot;Box&quot;:[287.0755,453.8268,57.0,0.7717]}],&quot;Cells&quot;:[{&quot;Row&quot;:0,&quot;Column&quot;:0,&quot;Box&quot;:[287.8472,73.0551,47.7717,19.0]},{&quot;Row&quot;:0,&quot;Column&quot;:1,&quot;Box&quot;:[287.8472,120.8268,64.0,19.0]},{&quot;Row&quot;:0,&quot;Column&quot;:2,&quot;Box&quot;:[287.8472,184.8268,269.0,19.0]},{&quot;Row&quot;:0,&quot;Column&quot;:3,&quot;Box&quot;:[287.8472,453.8268,57.0,19.0]},{&quot;Row&quot;:1,&quot;Column&quot;:0,&quot;Box&quot;:[306.8472,73.0551,47.7717,21.0]},{&quot;Row&quot;:1,&quot;Column&quot;:1,&quot;Box&quot;:[306.8472,120.8268,64.0,21.0]},{&quot;Row&quot;:1,&quot;Column&quot;:2,&quot;Box&quot;:[306.8472,184.8268,269.0,21.0]},{&quot;Row&quot;:1,&quot;Column&quot;:3,&quot;Box&quot;:[306.8472,453.8268,57.0,21.0]},{&quot;Row&quot;:2,&quot;Column&quot;:0,&quot;Box&quot;:[327.8472,73.0551,47.7717,23.0]},{&quot;Row&quot;:2,&quot;Column&quot;:1,&quot;Box&quot;:[327.8472,120.8268,64.0,23.0]},{&quot;Row&quot;:2,&quot;Column&quot;:2,&quot;Box&quot;:[327.8472,184.8268,269.0,23.0]},{&quot;Row&quot;:2,&quot;Column&quot;:3,&quot;Box&quot;:[327.8472,453.8268,57.0,23.0]},{&quot;Row&quot;:3,&quot;Column&quot;:0,&quot;Box&quot;:[350.8472,73.0551,47.7717,7.9972]},{&quot;Row&quot;:3,&quot;Column&quot;:1,&quot;Box&quot;:[350.8472,120.8268,64.0,7.9972]},{&quot;Row&quot;:3,&quot;Column&quot;:2,&quot;Box&quot;:[350.8472,184.8268,269.0,7.9972]},{&quot;Row&quot;:3,&quot;Column&quot;:3,&quot;Box&quot;:[350.8472,453.8268,57.0,7.9972]}]}]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice&quot;,&quot;FormId&quot;:&quot;0f86e306&quot;,&quot;FormName&quot;:&quot;Service Billing Invoice&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;xeretec.co.uk&quot;,&quot;Box&quot;:[28.0571,412.1575,57.492,12.888]},{&quot;Text&quot;:&quot;Xeretec&quot;,&quot;Box&quot;:[47.8336,412.4409,28.896,11.456]},{&quot;Text&quot;:&quot;RG41&quot;,&quot;Box&quot;:[90.5617,412.4409,20.888,11.456]},{&quot;Text&quot;:&quot;INVOICE&quot;,&quot;Box&quot;:[103.5931,257.37,82.14,28.64]},{&quot;Text&quot;:&quot;accounts@xeretec.co.uk&quot;,&quot;Box&quot;:[132.5895,426.3307,94.0,11.456]},{&quot;Text&quot;:&quot;Invoice&quot;,&quot;Box&quot;:[166.2929,59.1834,30.978,12.888]},{&quot;Text&quot;:&quot;To.&quot;,&quot;Box&quot;:[166.2929,92.6544,13.473,12.888]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAddress&quot;,&quot;Box&quot;:[182.1232,58.6498,239.7441,91.0616]},{&quot;Field&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceNumber&quot;,&quot;Box&quot;:[165.1456,414.1501,151.2548,15.4342]},{&quot;Field&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceDate&quot;,&quot;Box&quot;:[184.6955,415.1791,149.7114,15.4342]},{&quot;Field&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAccountNumber&quot;,&quot;Box&quot;:[222.7665,413.1212,152.2838,17.4921]},{&quot;Field&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.SerialNumber&quot;,&quot;Box&quot;:[330.8056,103.4089,157.4285,13.8908]},{&quot;Field&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.VATTotal&quot;,&quot;Box&quot;:[723.3479,439.8738,47.8459,19.5499]},{&quot;Field&quot;:&quot;XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceTotal&quot;,&quot;Box&quot;:[724.3769,521.1604,48.3604,18.521]}],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport&quot;,&quot;FormId&quot;:&quot;42d975c8&quot;,&quot;FormName&quot;:&quot;Xeretec Field Service Report&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;Customer&quot;,&quot;Box&quot;:[96.304,74.0,37.336,9.52]},{&quot;Text&quot;:&quot;Name:&quot;,&quot;Box&quot;:[96.304,113.56,24.448,9.52]},{&quot;Text&quot;:&quot;Address:&quot;,&quot;Box&quot;:[116.304,74.0,34.672,9.52]},{&quot;Text&quot;:&quot;Resolution&quot;,&quot;Box&quot;:[392.304,74.0,41.336,9.52]},{&quot;Text&quot;:&quot;work&quot;,&quot;Box&quot;:[392.304,117.56,18.672,9.52]},{&quot;Text&quot;:&quot;notes:&quot;,&quot;Box&quot;:[392.304,138.456,24.0,9.52]},{&quot;Text&quot;:&quot;PARTS&quot;,&quot;Box&quot;:[426.38,74.0,33.89,11.9]},{&quot;Text&quot;:&quot;MANIFEST&quot;,&quot;Box&quot;:[426.38,110.67,51.11,11.9]},{&quot;Text&quot;:&quot;Signed&quot;,&quot;Box&quot;:[581.552,74.0,24.904,9.248]},{&quot;Text&quot;:&quot;on&quot;,&quot;Box&quot;:[581.552,101.128,8.896,9.248]},{&quot;Text&quot;:&quot;behalf&quot;,&quot;Box&quot;:[581.552,112.248,21.792,9.248]},{&quot;Text&quot;:&quot;of&quot;,&quot;Box&quot;:[581.552,136.264,6.672,9.248]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CompanyName&quot;,&quot;Box&quot;:[84.8879,246.9467,321.5451,27.7815]},{&quot;Field&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.SerialNumber&quot;,&quot;Box&quot;:[151.7693,250.548,316.4004,18.0065]},{&quot;Field&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CaseID&quot;,&quot;Box&quot;:[191.3837,247.9756,316.9149,18.521]},{&quot;Field&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.ReasonForVisit&quot;,&quot;Box&quot;:[213.506,249.0046,313.8281,18.521]},{&quot;Field&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.CustomerName&quot;,&quot;Box&quot;:[517.5591,85.4024,164.6311,14.4052]},{&quot;Field&quot;:&quot;XeretecDocuments.ServiceNow.FieldServiceReport.EngineerName&quot;,&quot;Box&quot;:[605.5338,87.4603,189.8403,21.6078]}],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}},{&quot;DocumentTypeId&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice&quot;,&quot;FormId&quot;:&quot;740b9945&quot;,&quot;FormName&quot;:&quot;Safehouse CMA Invoice&quot;,&quot;OriginalFileExtension&quot;:&quot;pdf&quot;,&quot;Pages&quot;:[{&quot;Page&quot;:0,&quot;Size&quot;:[0.0,0.0,595.0,842.0],&quot;SkewAngle&quot;:0.0,&quot;Evidence&quot;:[{&quot;Text&quot;:&quot;CMA&quot;,&quot;Box&quot;:[21.2487,24.05,18.2238,10.776]},{&quot;Text&quot;:&quot;CGM&quot;,&quot;Box&quot;:[21.2487,43.8238,19.1239,10.776]},{&quot;Text&quot;:&quot;SHIPPING&quot;,&quot;Box&quot;:[21.2487,64.4977,37.8002,10.776]},{&quot;Text&quot;:&quot;IRELAND&quot;,&quot;Box&quot;:[21.2487,104.7478,34.6542,10.776]},{&quot;Text&quot;:&quot;LTD&quot;,&quot;Box&quot;:[21.2487,141.4019,15.1021,10.776]},{&quot;Text&quot;:&quot;Invoice&quot;,&quot;Box&quot;:[138.9849,24.95,24.442,10.776]},{&quot;Text&quot;:&quot;To:&quot;,&quot;Box&quot;:[138.9849,52.292,11.5621,10.776]},{&quot;Text&quot;:&quot;INVOICE&quot;,&quot;Box&quot;:[93.0603,298.69,56.64,18.858]},{&quot;Text&quot;:&quot;ORIGINAL&quot;,&quot;Box&quot;:[93.0603,499.7299,67.4979,18.858]},{&quot;Text&quot;:&quot;Payable&quot;,&quot;Box&quot;:[139.7119,298.7502,28.028,10.776]},{&quot;Text&quot;:&quot;to:&quot;,&quot;Box&quot;:[139.7119,329.6781,8.898,10.776]}],&quot;Fields&quot;:[{&quot;Field&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.InvoiceNumber&quot;,&quot;Box&quot;:[107.5247,294.7926,111.6405,13.3763]},{&quot;Field&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.Currency&quot;,&quot;Box&quot;:[686.3059,528.8774,41.1578,21.6078]},{&quot;Field&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.TotalAmount&quot;,&quot;Box&quot;:[684.7625,386.3686,141.4799,23.1513]},{&quot;Field&quot;:&quot;SafehouseDocuments.Invoices.CMAInvoice.InvoiceDate&quot;,&quot;Box&quot;:[126.0457,313.8281,70.9972,10.8039]}],&quot;Tables&quot;:[]}],&quot;AnchorBasedConfiguration&quot;:{&quot;AnchorBasedFieldConfiguration&quot;:[]}}]" Timeout="100000">
+                              <p4:IntelligentFormExtractor.DocumentBounds>
+                                <InArgument x:TypeArguments="p5:ResultsDocumentBounds">
+                                  <DelegateArgumentValue x:TypeArguments="p5:ResultsDocumentBounds">
+                                    <DelegateInArgument x:TypeArguments="p5:ResultsDocumentBounds" Name="DocumentBounds" />
+                                  </DelegateArgumentValue>
+                                </InArgument>
+                              </p4:IntelligentFormExtractor.DocumentBounds>
+                              <p4:IntelligentFormExtractor.DocumentObjectModel>
+                                <InArgument x:TypeArguments="p3:Document">
+                                  <DelegateArgumentValue x:TypeArguments="p3:Document">
+                                    <DelegateInArgument x:TypeArguments="p3:Document" Name="DocumentObjectModel" />
+                                  </DelegateArgumentValue>
+                                </InArgument>
+                              </p4:IntelligentFormExtractor.DocumentObjectModel>
+                              <p4:IntelligentFormExtractor.DocumentPath>
+                                <InArgument x:TypeArguments="x:String">
+                                  <DelegateArgumentValue x:TypeArguments="x:String">
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="DocumentPath" />
+                                  </DelegateArgumentValue>
+                                </InArgument>
+                              </p4:IntelligentFormExtractor.DocumentPath>
+                              <p4:IntelligentFormExtractor.DocumentText>
+                                <InArgument x:TypeArguments="x:String">
+                                  <DelegateArgumentValue x:TypeArguments="x:String">
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="DocumentText" />
+                                  </DelegateArgumentValue>
+                                </InArgument>
+                              </p4:IntelligentFormExtractor.DocumentText>
+                              <p4:IntelligentFormExtractor.ExtractorDocumentType>
+                                <InArgument x:TypeArguments="p6:ExtractorDocumentType">
+                                  <DelegateArgumentValue x:TypeArguments="p6:ExtractorDocumentType">
+                                    <DelegateInArgument x:TypeArguments="p6:ExtractorDocumentType" Name="ExtractorDocumentType" />
+                                  </DelegateArgumentValue>
+                                </InArgument>
+                              </p4:IntelligentFormExtractor.ExtractorDocumentType>
+                              <p4:IntelligentFormExtractor.ExtractorResult>
+                                <OutArgument x:TypeArguments="p6:ExtractorResult">
+                                  <DelegateArgumentReference x:TypeArguments="p6:ExtractorResult">
+                                    <DelegateOutArgument x:TypeArguments="p6:ExtractorResult" Name="ExtractorResult" />
+                                  </DelegateArgumentReference>
+                                </OutArgument>
+                              </p4:IntelligentFormExtractor.ExtractorResult>
+                            </p4:IntelligentFormExtractor>
+                          </p4:DataExtractionScope.Extractors>
+                        </p4:DataExtractionScope>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Document: &quot; + docName + &quot; - Couldn't be classified. Skipping the extraction step.&quot;]" />
+                    </If.Else>
+                  </If>
+                  <Assign sap2010:Annotation.AnnotationText="Creating variable as we want to use this for deciding what to do with the data for the output" sap:VirtualizedContainerService.HintSize="896.8,120" sap2010:WorkflowViewState.IdRef="Assign_5">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[TaxonomyId]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[classificationResults(0).DocumentTypeId]</InArgument>
+                    </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="896.8,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Path: &quot; + path + &quot; | Classification Results: &quot; + TaxonomyId]" />
+                  <TryCatch DisplayName="Validating Results" sap:VirtualizedContainerService.HintSize="896.8,828.8" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <TryCatch.Try>
+                      <Sequence DisplayName="Present Validation Station" sap:VirtualizedContainerService.HintSize="375.2,597.6" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Presenting Validation Station for document: &quot; + docName]" />
+                        <p:PresentValidationStation AutomaticExtractionResults="[extractionResults]" DisplayName="Present Validation Station" DocumentObjectModel="[dom]" DocumentPath="[path]" DocumentText="[text]" sap:VirtualizedContainerService.HintSize="333.6,372" sap2010:WorkflowViewState.IdRef="PresentValidationStation_1" Taxonomy="[taxonomy]" ValidatedExtractionResults="[validatedResults]" />
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="403.2,22.4" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,251.2" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="variable1" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[validationStationError]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign sap:VirtualizedContainerService.HintSize="262.4,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:String">[validationStationExceptionInfo]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:String">[exception.StackTrace]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <If Condition="[validationStationError=False]" DisplayName="Consuming Results" sap:VirtualizedContainerService.HintSize="896.8,986.4" sap2010:WorkflowViewState.IdRef="If_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence DisplayName="Export Results" sap:VirtualizedContainerService.HintSize="452,827.2" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="sd1:DataSet" Name="outputDataset" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410.4,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[&quot;Exporting results for document: &quot; + docName]" />
+                        <p4:ExportExtractionResults DataSet="[outputDataset]" DisplayName="Export Extraction Results" ExtractionResult="[validatedResults]" sap:VirtualizedContainerService.HintSize="410.4,176.8" sap2010:WorkflowViewState.IdRef="ExportExtractionResults_1" IncludeConfidence="False" IncludeOCRConfidence="False" />
+                        <ui:ForEach x:TypeArguments="sd1:DataTable" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="410.4,384.8" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[outputDataset.Tables]">
+                          <ui:ForEach.Body>
+                            <ActivityAction x:TypeArguments="sd1:DataTable">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="sd1:DataTable" Name="table" />
+                              </ActivityAction.Argument>
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="375.2,250.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Rather than writing a new file each time - try to group together so all results end in same file" DisplayName="Invoke Select Output Table workflow" sap:VirtualizedContainerService.HintSize="333.6,157.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Output Data\Select Output Table.xaml">
+                                  <ui:InvokeWorkflowFile.Arguments>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_DocName">
+                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="docName" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TableName">
+                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="table.TableName" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="sd1:DataTable" x:Key="in_DataTable">
+                                      <mva:VisualBasicValue x:TypeArguments="sd1:DataTable" ExpressionText="table" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="x:String" x:Key="in_TaxonomyId">
+                                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TaxonomyId" />
+                                    </InArgument>
+                                    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" x:Key="in_Config">
+                                      <mva:VisualBasicValue x:TypeArguments="scg:Dictionary(x:String, x:Object)" ExpressionText="in_Config" />
+                                    </InArgument>
+                                  </ui:InvokeWorkflowFile.Arguments>
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </ui:InvokeWorkflowFile>
+                              </Sequence>
+                            </ActivityAction>
+                          </ui:ForEach.Body>
+                        </ui:ForEach>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="333.6,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Validation exception detected for document &lt;&quot; + docName + &quot;&gt;. Skipping export extraction results.&quot;]" />
+                    </If.Else>
+                  </If>
+                  <ui:MoveFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Move files once processed" Destination="[in_Config(&quot;ArchiveFiles&quot;).ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="896.8,191.2" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[path]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MoveFile>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="425.6,570.4" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="384,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="Info" Message="[&quot;Document: &quot; + fullPath + &quot; - Not a PDF - Moving to Unable To Process Folder&quot;]" />
+                  <ui:MoveFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Move File to Unable to Process Folder" Destination="[in_Config(&quot;UnableToProcess&quot;).ToString]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,191.2" sap2010:WorkflowViewState.IdRef="MoveFile_2" Overwrite="False" Path="[path]">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:MoveFile>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendExceptionToRaygun workflow" sap:VirtualizedContainerService.HintSize="384,113.6" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="Exception\SendExceptionToRaygun.xaml">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_RaygunApplicationKey">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;RaygunKey&quot;).ToString" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="s:Exception" x:Key="in_Exception">
+                        <mva:VisualBasicValue x:TypeArguments="s:Exception" ExpressionText="new exception(&quot;File is not a PDF - Filename: &quot; + path)" />
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_XeretecSubProjectNumber">
+                        <Literal x:TypeArguments="x:String">008</Literal>
+                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Mode">
+                        <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Mode" />
+                      </InArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                  </ui:InvokeWorkflowFile>
+                </Sequence>
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+    <al:LogEndOfWorkflow Prefix="{x:Null}" DisplayName="Log end of workflow" sap:VirtualizedContainerService.HintSize="1484.8,22.4" sap2010:WorkflowViewState.IdRef="LogEndOfWorkflow_1" Suffix="[&quot;[&quot; + DateTime.Now.ToString(&quot;dd/MM/yyyy HH:mm:ss&quot;) + &quot;] [ENDED]   &quot;]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </al:LogEndOfWorkflow>
+  </Sequence>
+</Activity>

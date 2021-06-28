@@ -1,0 +1,948 @@
+﻿{
+  "DataContractVersion": "1.1",
+  "DocumentTypes": [
+    {
+      "DocumentTypeId": "SafehouseDocuments.MedicalForms.CIOMSForm",
+      "Group": "Safehouse Documents",
+      "Category": "Medical Forms",
+      "Name": "CIOMS Form",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.PatientInitials",
+          "FieldName": "PatientInitials",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.PatientCountry",
+          "FieldName": "PatientCountry",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Day",
+          "FieldName": "PatientDOB_Day",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Month",
+          "FieldName": "PatientDOB_Month",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.PatientDOB_Year",
+          "FieldName": "PatientDOB_Year",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.PatientGender",
+          "FieldName": "PatientGender",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Day",
+          "FieldName": "ReactionDate_Day",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Month",
+          "FieldName": "ReactionDate_Month",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionDate_Year",
+          "FieldName": "ReactionDate_Year",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionLongDescription",
+          "FieldName": "ReactionLongDescription",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_PatientDied",
+          "FieldName": "ReactionCheck_PatientDied",
+          "IsMultiValue": false,
+          "Type": "Boolean",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Hospitalisation",
+          "FieldName": "ReactionCheck_Hospitalisation",
+          "IsMultiValue": false,
+          "Type": "Boolean",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Disability",
+          "FieldName": "ReactionCheck_Disability",
+          "IsMultiValue": false,
+          "Type": "Boolean",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_LifeThreatening",
+          "FieldName": "ReactionCheck_LifeThreatening",
+          "IsMultiValue": false,
+          "Type": "Boolean",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Anomaly",
+          "FieldName": "ReactionCheck_Anomaly",
+          "IsMultiValue": false,
+          "Type": "Boolean",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReactionCheck_Other",
+          "FieldName": "ReactionCheck_Other",
+          "IsMultiValue": false,
+          "Type": "Boolean",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.SuspectedDrugs",
+          "FieldName": "SuspectedDrugs",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ManufacturerNameAndAddress",
+          "FieldName": "ManufacturerNameAndAddress",
+          "IsMultiValue": false,
+          "Type": "Address",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ControlNumber",
+          "FieldName": "ControlNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.MedicalForms.CIOMSForm.ReportDate",
+          "FieldName": "ReportDate",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "dd-mmm-yyyy",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "XeretecDocuments.DevOps.RPAChangeRequest",
+      "Group": "Xeretec Documents",
+      "Category": "DevOps",
+      "Name": "RPA Change Request",
+      "OptionalUniqueIdentifier": "RPA_Change",
+      "TypeField": {
+        "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.ProjectName",
+          "FieldName": "ProjectName",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.ProjectNumber",
+          "FieldName": "ProjectNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.ChangeRequestNumber",
+          "FieldName": "ChangeRequestNumber",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.Requestor",
+          "FieldName": "Requestor",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.RequestTitle",
+          "FieldName": "RequestTitle",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.ChangeDescription",
+          "FieldName": "ChangeDescription",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.ChangeReason",
+          "FieldName": "ChangeReason",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails",
+          "FieldName": "DevOpsDetails",
+          "IsMultiValue": false,
+          "Type": "Table",
+          "DeriveFieldsFormat": "",
+          "Components": [
+            {
+              "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Type",
+              "FieldName": "Type",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [
+                {
+                  "Key": "RequiresReference",
+                  "Value": "true"
+                }
+              ]
+            },
+            {
+              "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.DevOpsID",
+              "FieldName": "DevOpsID",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [
+                {
+                  "Key": "RequiresReference",
+                  "Value": "true"
+                }
+              ]
+            },
+            {
+              "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.Title",
+              "FieldName": "Title",
+              "IsMultiValue": false,
+              "Type": "Text",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [
+                {
+                  "Key": "RequiresReference",
+                  "Value": "true"
+                }
+              ]
+            },
+            {
+              "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.DevOpsDetails.EstimatedHours",
+              "FieldName": "EstimatedHours",
+              "IsMultiValue": false,
+              "Type": "Number",
+              "DeriveFieldsFormat": "",
+              "Components": [],
+              "SetValues": [],
+              "Metadata": [
+                {
+                  "Key": "RequiresReference",
+                  "Value": "true"
+                }
+              ]
+            }
+          ],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.DevOps.RPAChangeRequest.Status",
+          "FieldName": "Status",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice",
+      "Group": "Xeretec Documents",
+      "Category": "Accounts Department",
+      "Name": "Service Billing Invoice",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAddress",
+          "FieldName": "CustomerAddress",
+          "IsMultiValue": false,
+          "Type": "Address",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceNumber",
+          "FieldName": "InvoiceNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceDate",
+          "FieldName": "InvoiceDate",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.CustomerAccountNumber",
+          "FieldName": "CustomerAccountNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.SerialNumber",
+          "FieldName": "SerialNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.VATTotal",
+          "FieldName": "VATTotal",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.AccountsDepartment.ServiceBillingInvoice.InvoiceTotal",
+          "FieldName": "InvoiceTotal",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "XeretecDocuments.ServiceNow.FieldServiceReport",
+      "Group": "Xeretec Documents",
+      "Category": "ServiceNow",
+      "Name": "Field Service Report",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "XeretecDocuments.ServiceNow.FieldServiceReport.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "XeretecDocuments.ServiceNow.FieldServiceReport.CompanyName",
+          "FieldName": "CompanyName",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.ServiceNow.FieldServiceReport.SerialNumber",
+          "FieldName": "SerialNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.ServiceNow.FieldServiceReport.CaseID",
+          "FieldName": "CaseID",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.ServiceNow.FieldServiceReport.ReasonForVisit",
+          "FieldName": "ReasonForVisit",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.ServiceNow.FieldServiceReport.CustomerName",
+          "FieldName": "CustomerName",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "XeretecDocuments.ServiceNow.FieldServiceReport.EngineerName",
+          "FieldName": "EngineerName",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "DocumentTypeId": "SafehouseDocuments.Invoices.CMAInvoice",
+      "Group": "Safehouse Documents",
+      "Category": "Invoices",
+      "Name": "CMA Invoice",
+      "OptionalUniqueIdentifier": null,
+      "TypeField": {
+        "FieldId": "SafehouseDocuments.Invoices.CMAInvoice.DocumentType",
+        "FieldName": "Document Type"
+      },
+      "Fields": [
+        {
+          "FieldId": "SafehouseDocuments.Invoices.CMAInvoice.InvoiceNumber",
+          "FieldName": "InvoiceNumber",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.Invoices.CMAInvoice.Currency",
+          "FieldName": "Currency",
+          "IsMultiValue": false,
+          "Type": "Text",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.Invoices.CMAInvoice.TotalAmount",
+          "FieldName": "TotalAmount",
+          "IsMultiValue": false,
+          "Type": "Number",
+          "DeriveFieldsFormat": "",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        },
+        {
+          "FieldId": "SafehouseDocuments.Invoices.CMAInvoice.InvoiceDate",
+          "FieldName": "InvoiceDate",
+          "IsMultiValue": false,
+          "Type": "Date",
+          "DeriveFieldsFormat": "dd-MMM-yyyy",
+          "Components": [],
+          "SetValues": [],
+          "Metadata": [
+            {
+              "Key": "RequiresReference",
+              "Value": "true"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Groups": [
+    {
+      "Name": "Safehouse Documents",
+      "Categories": [
+        "Invoices",
+        "Medical Forms"
+      ]
+    },
+    {
+      "Name": "Xeretec Documents",
+      "Categories": [
+        "Accounts Department",
+        "DevOps",
+        "ServiceNow"
+      ]
+    }
+  ],
+  "SupportedLanguages": [
+    {
+      "Name": "Undetermined Language",
+      "Code": "und"
+    },
+    {
+      "Name": "Bulgarian",
+      "Code": "bul"
+    },
+    {
+      "Name": "Cantonese",
+      "Code": "yue"
+    },
+    {
+      "Name": "Danish",
+      "Code": "dan"
+    },
+    {
+      "Name": "Dutch",
+      "Code": "nld"
+    },
+    {
+      "Name": "English",
+      "Code": "eng"
+    },
+    {
+      "Name": "French",
+      "Code": "fra"
+    },
+    {
+      "Name": "Georgian",
+      "Code": "kat"
+    },
+    {
+      "Name": "German",
+      "Code": "deu"
+    },
+    {
+      "Name": "Greek",
+      "Code": "ell"
+    },
+    {
+      "Name": "Hebrew",
+      "Code": "heb"
+    },
+    {
+      "Name": "Hindi",
+      "Code": "hin"
+    },
+    {
+      "Name": "Italian",
+      "Code": "ita"
+    },
+    {
+      "Name": "Japanese",
+      "Code": "jpn"
+    },
+    {
+      "Name": "Korean",
+      "Code": "kor"
+    },
+    {
+      "Name": "Macedonian",
+      "Code": "mkd"
+    },
+    {
+      "Name": "Mandarin",
+      "Code": "zho"
+    },
+    {
+      "Name": "Marathi",
+      "Code": "mar"
+    },
+    {
+      "Name": "Norwegian",
+      "Code": "nor"
+    },
+    {
+      "Name": "Polish",
+      "Code": "pol"
+    },
+    {
+      "Name": "Portuguese",
+      "Code": "por"
+    },
+    {
+      "Name": "Romanian",
+      "Code": "ron"
+    },
+    {
+      "Name": "Russian",
+      "Code": "rus"
+    },
+    {
+      "Name": "Serbian",
+      "Code": "srp"
+    },
+    {
+      "Name": "Spanish",
+      "Code": "spa"
+    },
+    {
+      "Name": "Swedish",
+      "Code": "swe"
+    },
+    {
+      "Name": "Telugu",
+      "Code": "tel"
+    }
+  ]
+}
